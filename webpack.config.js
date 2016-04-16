@@ -1,11 +1,6 @@
-var webpack = require('webpack');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     devtool: 'source-map',
-    entry: [
-        './src/index.js'
-    ],
+    entry: './src/index.js',
     module: {
         loaders: [{
             test: /\.js?$/,
@@ -20,17 +15,11 @@ module.exports = {
         extensions: ['', '.js', '.jsx']
     },
     output: {
-        path: __dirname + '/dist/',
-        publicPath: '/',
-        filename: 'bundle.js',
+        path: './',
+        filename: 'index.js'
     },
     devServer: {
-        contentBase: __dirname + '/dist/'
-    },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new HtmlwebpackPlugin({
-            title: 'React Webpack Starter'
-        })
-    ]
+        inline: true,
+        port: 3333
+    }
 };
